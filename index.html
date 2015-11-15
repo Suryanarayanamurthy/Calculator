@@ -11,12 +11,12 @@
 <div ng-app = "CalcApp"> 
 <div ng-controller ="CalcController">
 
-  <div class="row">
-  <h1 ></h1>
+  <div class="row" style="padding:15px">
+  <h1 ng-binding = "num">{{result}}</h1>
   </div>
   
-  <div class = "row" >
-    <button >7</button>
+  <div class = "row" style="padding:15px">
+    <button ng-click="" ng-model="num" value = 7 >7</button>
     <button >8</button>
     <button >9</button>
     <button >4</button>
@@ -29,14 +29,15 @@
     <button >C</button>
   </div>
 
-  <div class = "row">
+  <div class = "row" style="padding:15px">
     <button >+</button>
     <button >-</button>
     <button >*</button>
     <button >/</button> 
   </div>
-
+<div class ="row">
   <button class ="row">=</button>
+  </div>
 
 </div>
 </div>
