@@ -1,23 +1,38 @@
 var app = angular.module("CalcApp",['ngRoute']);
 app.controller("CalcController",function($scope){
 $scope.result = "";
-var expression;
+var decimalPt = false;
+var patt = /[+-/*]/;
 $scope.operand = function(operand){
-    //expression += operand;
     $scope.result += operand ;
 };
+
 $scope.operator = function(operator){
-    if(operator === '=')
-    $scope.result = eval($scope.result);
+    
+    // remove redundent operator.
+    //if($scope.result[$scope.result.length - 1] == ('+' || '-' || '*' || '/'))
+    if(patt.test($scope.result[$scope.result.length - 1]))
+    {
+      $scope.result = $scope.result.slice(0, $scope.result.length - 1 );
+    }
+    if(operator == '=')
+    {
+      $scope.result =  eval($scope.result);
+    }
     else
     $scope.result += operator ;
-
-    //switch(operator) {
-    //case '=':
-        //result = expression;
-      //  break;
-    //default:
-  //     result;
-//}
+    //reset the decimal pt for nxt number.
+    if(decimalPt) decimalPt =false;
 };
+$scope.decimalPt = function(){
+    if(!decimalPt)
+    {
+        $scope.result += '.';
+        decimalPt = true;
+    }
+};
+$scope.clearScreen = function(){
+    $scope.result = "";
+};
+
 });
