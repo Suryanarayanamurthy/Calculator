@@ -9,11 +9,12 @@
 </head>
 
 <body>
+<header><h1>Simple JS calculator</h1></header>
     <div ng-app="CalcApp" id="calculator">
         <div ng-controller="CalcController as calApp">
             <form name="calcForm">
                 <div class="top">
-                    <button ng-click="clearScreen()">C</button>
+                    <button ng-click="clearScreen()" class="clear">C</button>
                     <div class="screen">{{result}}</div>
                 </div>
                 <div class="key">
@@ -31,8 +32,9 @@
                     <button ng-click="operator('*')">*</button>
                     <button ng-click="operand('0')">0</button>
                     <button ng-click="decimalPt()">.</button>
+                    <button ng-click="operator('=')" class="eval">=</button>
                     <button ng-click="operator('/')">/</button>
-                    <button ng-click="operator('=')">=</button>
+
                 </div>
             </form>
         </div>
