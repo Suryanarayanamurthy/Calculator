@@ -12,7 +12,8 @@ html {
     /*background: radial-gradient(circle, #fff 20%, #ccc);*/
     background-size: cover;
 }
-h1{
+
+h1 {
     text-align: center;
     font-size: 36px;
     font-family: Coda Caption;
@@ -68,5 +69,5 @@ h1{
     /* prevent selection of text inside keys */
     /*user-select: none;*/
     /* Smoothing out hover and active states using css3 transitions */
-   /* transition: all 0.2s ease;*/
+    /* transition: all 0.2s ease;*/
 }

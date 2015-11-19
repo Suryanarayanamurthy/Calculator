@@ -9,7 +9,8 @@
 </head>
 
 <body>
-<header><h1>Simple JS calculator</h1></header>
+    <header>
+        <h1>Simple JS calculator</h1></header>
     <div ng-app="CalcApp" id="calculator">
         <div ng-controller="CalcController as calApp">
             <form name="calcForm">
@@ -34,7 +35,6 @@
                     <button ng-click="decimalPt()">.</button>
                     <button ng-click="operator('=')" class="eval">=</button>
                     <button ng-click="operator('/')">/</button>
-
                 </div>
             </form>
         </div>
